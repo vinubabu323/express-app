@@ -1,0 +1,24 @@
+<% for(var i= 0;i< users.length;i++){%>
+  <tr>
+    <td><%=i+1%></td>
+    <td><%=users[i].name%></td>
+    <td><img src="/img/users/<%=users[i].image%>" class="rounded-circle" style="width: 50px;"
+      alt="profile_image" /></td>
+    <td><%=users[i].email%></td>
+    <td><%=users[i].gender%></td>
+    <td>
+      <span class="badge <%=users[i].status === 'Active' ? 'badge-success' : 'badge-danger' %>"><%=users[i].status === 'Active' ? 'Active' : 'Inactive' %></span>
+    <td>
+      <a href="/update-user?id=<%=users[i]._id%>" class="btn border-shadow-update">
+        <span class="text-gradient">
+          <i class="fas fa-pencil-alt"></i>
+        </span>
+      </a>
+      <a class="btn border-shadow delete" data-id="<%=users[i]._id%>">
+        <span class="text-gradient">
+          <i class="fas fa-times"></i>
+        </span>
+      </a>
+    </td>
+  </tr>
+  <%}%>
